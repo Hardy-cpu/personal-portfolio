@@ -63,15 +63,23 @@ export default function Portfolio() {
                     </div>
 
                     {/* Bio */}
-                    <div className='space-y-6'>
-                        <p className='text-gray-300 text-lg leading-relaxed'>
-                            I've combined years of writing experience with my passion for branding, business, and technology. I am obsessed with creating valuable content within
-                            any industry, for any business, and based on any guidelines. I see myself as someone who could come into a brand new business and quickly create
-                            marketing plans, strategize re-branding, edit existing content, create new content, and assist with the necessary sourcing of important jobs.
-                        </p>
-                        <p className='text-gray-300 text-lg leading-relaxed'>
-                            Giving me an opportunity to create, edit, or improve something, is almost always a profitable investment.
-                        </p>
+                    <div className='space-y-4'>
+                        <p className='text-gray-300 text-lg leading-relaxed font-semibold'>I transform businesses through marketing, distribution, and go-to-market strategy.</p>
+                        <ul className='list-disc list-inside text-gray-300 space-y-2 text-sm'>
+                            <li>
+                                Grew <span className='font-bold'>LinkedIn</span> presence from <span className='font-bold'>0 → 2,000+</span> followers for{' '}
+                                <span className='font-bold'>CLEATUS</span>, driving <span className='font-bold'>thousands in new MRR</span>.
+                            </li>
+                            <li>
+                                Delivered <span className='font-bold'>120K+</span> organic impressions in 90 days through targeted content campaigns.
+                            </li>
+                            <li>
+                                Led <span className='font-bold'>sports-marketing activations</span> for <span className='font-bold'>College of Charleston</span> boosting game-day
+                                fan engagement by 40%.
+                            </li>
+                            <li>Built data-driven dashboards & reporting suites that cut weekly analytics time by 70%.</li>
+                            <li>Trusted by startups & universities to craft brand voice, scale distribution, and ship revenue-ready GTM plans.</li>
+                        </ul>
                         <Button
                             variant='outline'
                             className='rounded-full bg-transparent border-white text-white hover:bg-white hover:text-gray-800'
@@ -82,7 +90,7 @@ export default function Portfolio() {
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
-                                View Resume
+                                View Full Résumé
                             </Link>
                         </Button>
                     </div>
