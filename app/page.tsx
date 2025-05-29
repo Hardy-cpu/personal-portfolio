@@ -6,6 +6,30 @@ import { Menu, Twitter, Linkedin, Youtube, ArrowRight, Mail, Phone, FileText } f
 import { Button } from '@/components/ui/button'
 
 export default function Portfolio() {
+    // Structured data for SEO
+    const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Cole Hardister',
+        jobTitle: 'Digital Marketing & Communications Expert',
+        description: 'Digital marketing strategist who transforms businesses through marketing, distribution, and go-to-market strategy',
+        url: 'https://colehardister.com',
+        image: 'https://colehardister.com/images/cole-profile.JPEG',
+        email: 'hardisterw@g.cofc.edu',
+        telephone: '+15034905874',
+        alumniOf: {
+            '@type': 'CollegeOrUniversity',
+            name: 'College of Charleston',
+        },
+        knowsAbout: ['Digital Marketing', 'LinkedIn Growth', 'Social Media Marketing', 'Content Strategy', 'Go-to-Market Strategy', 'Sports Marketing', 'Analytics'],
+        hasOccupation: {
+            '@type': 'Occupation',
+            name: 'Digital Marketing Strategist',
+            description: 'Specializes in marketing strategy, distribution, and go-to-market planning',
+        },
+        sameAs: ['https://linkedin.com/in/colehardister', 'https://twitter.com/colehardister'],
+    }
+
     // Keep only the CLEATUS slide as static content
     const heroProject = {
         image: '/images/cover.png',
@@ -44,6 +68,10 @@ export default function Portfolio() {
 
     return (
         <div className='min-h-screen bg-gray-800 text-white p-6'>
+            <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
             <div className='grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8'>
                 {/* Left Sidebar */}
                 <div className='space-y-8'>
@@ -98,19 +126,23 @@ export default function Portfolio() {
                     {/* Contact Information */}
                     <div className='space-y-4'>
                         <div className='flex items-center gap-3'>
-                            <Mail className='w-5 h-5 text-blue-400' />
+                            <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center'>
+                                <Mail className='w-4 h-4 text-gray-300' />
+                            </div>
                             <Link
                                 href='mailto:hardisterw@g.cofc.edu'
-                                className='text-gray-300 hover:text-white'
+                                className='text-gray-300 hover:text-white transition-colors'
                             >
                                 hardisterw@g.cofc.edu
                             </Link>
                         </div>
                         <div className='flex items-center gap-3'>
-                            <Phone className='w-5 h-5 text-green-400' />
+                            <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center'>
+                                <Phone className='w-4 h-4 text-gray-300' />
+                            </div>
                             <Link
                                 href='tel:+15034905874'
-                                className='text-gray-300 hover:text-white'
+                                className='text-gray-300 hover:text-white transition-colors'
                             >
                                 +1 (503) 490-5874
                             </Link>
@@ -321,54 +353,60 @@ export default function Portfolio() {
                         </div>
                     </section>
 
-                    {/* Contact and Clients Sections */}
+                    {/* Contact and Stats Sections */}
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                         {/* Contact Section */}
-                        <section className='relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-6'>
+                        <section className='relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-6 border border-gray-700'>
                             <h2 className='text-2xl font-mono mb-4'>Contact</h2>
                             <div className='space-y-4'>
                                 <Link
                                     href='mailto:hardisterw@g.cofc.edu'
-                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors'
+                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors group'
                                 >
-                                    <Mail className='w-5 h-5 text-blue-400' />
-                                    <span>Email Me</span>
+                                    <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors'>
+                                        <Mail className='w-4 h-4 text-gray-300' />
+                                    </div>
+                                    <span className='text-gray-300'>Email Me</span>
                                 </Link>
                                 <Link
                                     href='tel:+15034905874'
-                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors'
+                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors group'
                                 >
-                                    <Phone className='w-5 h-5 text-green-400' />
-                                    <span>Call Me</span>
+                                    <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors'>
+                                        <Phone className='w-4 h-4 text-gray-300' />
+                                    </div>
+                                    <span className='text-gray-300'>Call Me</span>
                                 </Link>
                                 <Link
                                     href='/Cole-Resume.pdf'
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors'
+                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors group'
                                 >
-                                    <FileText className='w-5 h-5 text-purple-400' />
-                                    <span>View Resume</span>
+                                    <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors'>
+                                        <FileText className='w-4 h-4 text-gray-300' />
+                                    </div>
+                                    <span className='text-gray-300'>View Resume</span>
                                 </Link>
                             </div>
                         </section>
 
-                        {/* Experience Section */}
-                        <section className='bg-gray-900 rounded-xl p-6'>
-                            <div className='flex items-center gap-2 mb-2'>
-                                {[...Array(5)].map((_, i) => (
-                                    <svg
-                                        key={i}
-                                        className='w-5 h-5 text-yellow-400 fill-current'
-                                        viewBox='0 0 20 20'
-                                    >
-                                        <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-                                    </svg>
-                                ))}
+                        {/* Achievement Stats Section */}
+                        <section className='bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700'>
+                            <div className='space-y-6'>
+                                <div>
+                                    <h3 className='text-3xl font-bold text-white mb-1'>2K+</h3>
+                                    <p className='text-gray-400 text-sm'>LinkedIn Followers Grown</p>
+                                </div>
+                                <div>
+                                    <h3 className='text-3xl font-bold text-white mb-1'>120K+</h3>
+                                    <p className='text-gray-400 text-sm'>Organic Impressions</p>
+                                </div>
+                                <div>
+                                    <h3 className='text-3xl font-bold text-white mb-1'>40%</h3>
+                                    <p className='text-gray-400 text-sm'>Fan Engagement Increase</p>
+                                </div>
                             </div>
-                            <h3 className='text-4xl font-bold mb-4'>3+</h3>
-                            <p className='text-gray-400'>Years Experience</p>
-                            <p className='text-sm text-gray-500 mt-2'>Digital Marketing & Communications</p>
                         </section>
                     </div>
                 </div>
