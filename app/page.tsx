@@ -1,416 +1,221 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu, Twitter, Linkedin, Youtube, ArrowRight, Mail, Phone, FileText } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { CONTACT, Eyebrow, SiteShell, Stat } from '@/components/site/shell'
+import { AnalyticsThumb } from '@/components/site/analytics-thumb'
+
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Cole Hardister',
+    jobTitle: 'SEO & Content Manager',
+    description: 'SEO and content marketer. Former Head of Marketing and Communications at CLEATUS, where LinkedIn grew from zero to 3,000+ followers.',
+    url: 'https://colehardister.com',
+    image: 'https://colehardister.com/images/cole-profile.JPEG',
+    email: CONTACT.email,
+    telephone: '+15034905874',
+    worksFor: {
+        '@type': 'Organization',
+        name: 'SearchX',
+    },
+    alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: 'College of Charleston',
+    },
+    knowsAbout: ['SEO', 'Content Strategy', 'LinkedIn Growth', 'B2B Marketing', 'Sports Marketing', 'Analytics', 'Go-to-Market Strategy'],
+    hasOccupation: {
+        '@type': 'Occupation',
+        name: 'SEO & Content Manager',
+        description: 'Manages SEO strategy and content production for 30+ clients, with a background in B2B startup marketing and sports marketing',
+    },
+    sameAs: [CONTACT.linkedin, 'https://twitter.com/colehardister'],
+}
 
 export default function Portfolio() {
-    // Structured data for SEO
-    const structuredData = {
-        '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: 'Cole Hardister',
-        jobTitle: 'Digital Marketing & Communications Expert',
-        description: 'Digital marketing strategist who transforms businesses through marketing, distribution, and go-to-market strategy',
-        url: 'https://colehardister.com',
-        image: 'https://colehardister.com/images/cole-profile.JPEG',
-        email: 'hardisterw@g.cofc.edu',
-        telephone: '+15034905874',
-        alumniOf: {
-            '@type': 'CollegeOrUniversity',
-            name: 'College of Charleston',
-        },
-        knowsAbout: ['Digital Marketing', 'LinkedIn Growth', 'Social Media Marketing', 'Content Strategy', 'Go-to-Market Strategy', 'Sports Marketing', 'Analytics'],
-        hasOccupation: {
-            '@type': 'Occupation',
-            name: 'Digital Marketing Strategist',
-            description: 'Specializes in marketing strategy, distribution, and go-to-market planning',
-        },
-        sameAs: ['https://linkedin.com/in/colehardister', 'https://twitter.com/colehardister'],
-    }
-
-    // Keep only the CLEATUS slide as static content
-    const heroProject = {
-        image: '/images/cover.png',
-        title: 'CLEATUS',
-        description: 'Marketing and Communications - grew LinkedIn from zero to over 2k followers driving thousands in MRR',
-        thumbnailImage: '/images/small-frame.png',
-    }
-
-    // Project slides data for thumbnails only
-    const slides = [
-        {
-            image: '/images/cover.png',
-            title: 'CLEATUS',
-            description: 'Marketing and Communications - grew LinkedIn from zero to over 2k followers driving thousands in MRR',
-            thumbnailImage: '/images/small-frame.png',
-        },
-        {
-            image: '/images/collegeathletics.jpeg',
-            title: 'College of Charleston',
-            description: 'Sports Marketing',
-            thumbnailImage: '/images/CofcLogo.png',
-        },
-        {
-            image: '/images/twitter-header.png',
-            title: 'Social Media Management',
-            description: 'Content Strategy & Growth',
-            thumbnailImage: '/images/X-logo.png',
-        },
-        {
-            image: '/images/linkedin-analytics.png',
-            title: 'Agency Analytics',
-            description: 'Comprehensive guides and API documentation',
-            thumbnailImage: '/images/LinkedIn.png',
-        },
-    ]
-
     return (
-        <div className='min-h-screen bg-gray-800 text-white p-6'>
+        <SiteShell>
             <script
                 type='application/ld+json'
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
-            <div className='grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8'>
-                {/* Left Sidebar */}
-                <div className='space-y-8'>
-                    {/* Profile Header */}
-                    <div className='flex items-center gap-4'>
-                        <Image
-                            src='/images/cole-profile.JPEG'
-                            alt='Cole Hardister Profile'
-                            width={90}
-                            height={90}
-                            className='rounded-md border-2 border-white'
-                        />
+
+            {/* Hero */}
+            <section className='mx-auto max-w-6xl px-6 pb-20 pt-20 md:pt-28'>
+                <div className='flex items-center gap-4'>
+                    <Image
+                        src='/images/cole-profile.JPEG'
+                        alt='Cole Hardister'
+                        width={56}
+                        height={56}
+                        className='h-14 w-14 rounded-full object-cover'
+                        priority
+                    />
+                    <Eyebrow className='text-neutral-500'>Digital marketing &middot; SEO &middot; Sports marketing</Eyebrow>
+                </div>
+                <h1 className='mt-8 max-w-4xl font-display text-5xl leading-[1.05] tracking-tight md:text-7xl'>
+                    Digital marketer and SEO specialist with a <em className='text-[#243665]'>sports marketing</em> edge.
+                </h1>
+                <p className='mt-8 max-w-2xl text-lg leading-relaxed text-neutral-600'>
+                    I&rsquo;m Cole Hardister. At SearchX I manage SEO and content for 30+ clients. As Head of Marketing and Communications at CLEATUS, I grew LinkedIn from zero to
+                    3,000+ followers. Before that, I ran campaigns and matchday marketing for Division I athletics at the College of Charleston.
+                </p>
+                <div className='mt-10 flex flex-wrap items-center gap-3'>
+                    <Link
+                        href='/projects/project1'
+                        className='inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700'
+                    >
+                        See my CLEATUS work <ArrowRight className='h-4 w-4' />
+                    </Link>
+                    <Link
+                        href={CONTACT.resume}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-center gap-2 rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium transition-colors hover:border-neutral-900'
+                    >
+                        Résumé <ArrowUpRight className='h-4 w-4' />
+                    </Link>
+                </div>
+            </section>
+
+            {/* Results strip */}
+            <section className='border-y border-neutral-200 bg-white'>
+                <div className='mx-auto grid max-w-6xl grid-cols-2 gap-10 px-6 py-14 md:grid-cols-4'>
+                    <Stat
+                        value='3,000+'
+                        label='LinkedIn followers at CLEATUS, from zero'
+                    />
+                    <Stat
+                        value='120K'
+                        label='Organic impressions in under a year'
+                    />
+                    <Stat
+                        value='70'
+                        label='Articles and posts written for CLEATUS'
+                    />
+                    <Stat
+                        value='30+'
+                        label='SEO clients managed at SearchX'
+                    />
+                </div>
+            </section>
+
+            {/* Work */}
+            <section
+                id='work'
+                className='mx-auto max-w-6xl scroll-mt-20 px-6 py-24'
+            >
+                <Eyebrow className='text-neutral-500'>Selected work</Eyebrow>
+                <h2 className='mt-3 font-display text-4xl tracking-tight md:text-5xl'>Three projects that show how I work.</h2>
+
+                {/* Featured: CLEATUS */}
+                <Link
+                    href='/projects/project1'
+                    className='group mt-12 grid overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-shadow hover:shadow-xl hover:shadow-neutral-900/5 md:grid-cols-[1fr_1.15fr]'
+                >
+                    <div className='flex flex-col justify-between p-8 md:p-12'>
                         <div>
-                            <h1 className='text-2xl font-mono'>COLE HARDISTER</h1>
-                            <p className='text-gray-400'>DIGITAL MARKETING & COMMUNICATIONS</p>
+                            <Eyebrow className='text-[#243665]'>Featured &middot; Marketing &amp; Communications</Eyebrow>
+                            <h3 className='mt-4 font-display text-4xl tracking-tight md:text-5xl'>CLEATUS</h3>
+                            <p className='mt-4 leading-relaxed text-neutral-600'>
+                                An AI platform for government contracting had almost no marketing presence. I built a LinkedIn content engine that became a reliable customer
+                                acquisition channel.
+                            </p>
                         </div>
-                    </div>
-
-                    {/* Bio */}
-                    <div className='space-y-4'>
-                        <p className='text-gray-300 text-lg leading-relaxed font-semibold'>I transform businesses through marketing, distribution, and go-to-market strategy.</p>
-                        <ul className='list-disc list-inside text-gray-300 space-y-2 text-sm'>
-                            <li>
-                                Grew <span className='font-bold'>LinkedIn</span> presence from <span className='font-bold'>0 → 2,000+</span> followers for{' '}
-                                <span className='font-bold'>CLEATUS</span>, driving <span className='font-bold'>thousands in new MRR</span>.
-                            </li>
-                            <li>
-                                Delivered <span className='font-bold'>120K+</span> organic impressions in 90 days through targeted content campaigns.
-                            </li>
-                            <li>
-                                Led <span className='font-bold'>sports-marketing activations</span> for <span className='font-bold'>College of Charleston</span> boosting game-day
-                                fan engagement by 40%.
-                            </li>
-                            <li>Built data-driven dashboards & reporting suites that cut weekly analytics time by 70%.</li>
-                            <li>Trusted by startups & universities to craft brand voice, scale distribution, and ship revenue-ready GTM plans.</li>
-                        </ul>
-                        <Button
-                            variant='outline'
-                            className='rounded-full bg-transparent border-white text-white hover:bg-white hover:text-gray-800'
-                            asChild
-                        >
-                            <Link
-                                href='/Cole-Resume.pdf'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                View Full Résumé
-                            </Link>
-                        </Button>
-                    </div>
-
-                    {/* Contact Information */}
-                    <div className='space-y-4'>
-                        <div className='flex items-center gap-3'>
-                            <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center'>
-                                <Mail className='w-4 h-4 text-gray-300' />
+                        <div className='mt-10 flex items-end justify-between gap-6'>
+                            <div className='flex gap-8'>
+                                <div>
+                                    <p className='font-display text-3xl'>3,000+</p>
+                                    <p className='text-xs text-neutral-500'>followers</p>
+                                </div>
+                                <div>
+                                    <p className='font-display text-3xl'>70</p>
+                                    <p className='text-xs text-neutral-500'>pieces of content</p>
+                                </div>
                             </div>
-                            <Link
-                                href='mailto:hardisterw@g.cofc.edu'
-                                className='text-gray-300 hover:text-white transition-colors'
-                            >
-                                hardisterw@g.cofc.edu
-                            </Link>
-                        </div>
-                        <div className='flex items-center gap-3'>
-                            <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center'>
-                                <Phone className='w-4 h-4 text-gray-300' />
-                            </div>
-                            <Link
-                                href='tel:+15034905874'
-                                className='text-gray-300 hover:text-white transition-colors'
-                            >
-                                +1 (503) 490-5874
-                            </Link>
+                            <span className='flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white transition-transform group-hover:translate-x-1'>
+                                <ArrowRight className='h-5 w-5' />
+                            </span>
                         </div>
                     </div>
+                    <div className='relative min-h-[260px] border-t border-neutral-200 bg-white md:border-l md:border-t-0'>
+                        <Image
+                            src='/images/cover.png'
+                            alt='CLEATUS: Find. Bid. Win! Government contracts with AI'
+                            fill
+                            className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
+                            sizes='(max-width: 768px) 100vw, 600px'
+                        />
+                    </div>
+                </Link>
 
-                    {/* Social Links */}
-                    <div className='space-y-4'>
-                        <div className='flex gap-4'>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
+                <div className='mt-6 grid gap-6 md:grid-cols-2'>
+                    <Link
+                        href='/projects/project2'
+                        className='group overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-shadow hover:shadow-xl hover:shadow-neutral-900/5'
+                    >
+                        <div className='grid aspect-[16/9] grid-cols-2 overflow-hidden border-b border-neutral-200'>
+                            <div className='relative overflow-hidden'>
                                 <Image
-                                    src='/images/X-logo.png'
-                                    alt='X/Twitter'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/LinkedIn.png'
-                                    alt='LinkedIn'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/meta-logo.jpeg'
-                                    alt='Meta'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Right Content */}
-                <div className='space-y-8'>
-                    {/* Menu Button - Only show on mobile */}
-                    <div className='flex justify-end lg:hidden'>
-                        <Button
-                            variant='ghost'
-                            size='icon'
-                        >
-                            <Menu className='w-6 h-6' />
-                        </Button>
-                    </div>
-
-                    {/* Project Highlights Section */}
-                    <section className='space-y-8'>
-                        <div className='flex justify-between items-center'>
-                            <h2 className='text-2xl font-mono'>My Projects</h2>
-                            <Button
-                                variant='ghost'
-                                size='icon'
-                                asChild
-                            >
-                                <Link href='/projects'>
-                                    <ArrowRight className='w-5 h-5' />
-                                </Link>
-                            </Button>
-                        </div>
-
-                        {/* Projects Section - 2/3 width */}
-                        <section className='space-y-8'>
-                            {/* Project Highlights Carousel - now static */}
-                            <div className='relative h-[300px] bg-gray-900 rounded-xl overflow-hidden group'>
-                                <Image
-                                    src={heroProject.image}
-                                    alt={heroProject.title}
+                                    src='/images/collegeathletics.jpeg'
+                                    alt='College of Charleston Cougars logo'
                                     fill
-                                    className='object-cover'
-                                />
-                                <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'>
-                                    <div className='absolute bottom-4 left-4 right-4'>
-                                        <h3 className='text-xl font-bold mb-2'>{heroProject.title}</h3>
-                                        <p className='text-gray-300'>{heroProject.description}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Project Thumbnails */}
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-                                {slides.map((project, index) => (
-                                    <Link
-                                        key={index}
-                                        href={`/projects/project${index + 1}`}
-                                        className='block'
-                                    >
-                                        <div className='relative aspect-[4/3] bg-gray-900 rounded-lg overflow-hidden group transition-all duration-300'>
-                                            <Image
-                                                src={project.thumbnailImage}
-                                                alt={project.title}
-                                                fill
-                                                className='object-cover group-hover:scale-105 transition-transform duration-300'
-                                            />
-                                            <div className='absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center'>
-                                                <span className='text-white text-sm font-medium text-center px-2'>{project.title}</span>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </section>
-                    </section>
-
-                    {/* Tools Section */}
-                    <section className='bg-blue-600 rounded-xl p-6'>
-                        <div className='flex justify-between items-center mb-4'>
-                            <h2 className='text-2xl font-mono'>Tools/Skills</h2>
-                            <Button
-                                variant='ghost'
-                                size='icon'
-                                className='text-white'
-                                asChild
-                            >
-                                <Link href='/tools'>
-                                    <ArrowRight className='w-5 h-5' />
-                                </Link>
-                            </Button>
-                        </div>
-                        <div className='flex gap-4 flex-wrap'>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/Figma.png'
-                                    alt='Figma'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
+                                    className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
+                                    sizes='(max-width: 768px) 50vw, 280px'
                                 />
                             </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
+                            <div className='relative overflow-hidden'>
                                 <Image
-                                    src='/images/X-logo.png'
-                                    alt='X/Twitter'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/LinkedIn.png'
-                                    alt='LinkedIn'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/cursor-logo.jpeg'
-                                    alt='Cursor'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/semrush.png'
-                                    alt='SEMrush'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/github-logo.png'
-                                    alt='GitHub'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/meta-logo.jpeg'
-                                    alt='Meta'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/capcut-logo.png'
-                                    alt='CapCut'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
-                                />
-                            </div>
-                            <div className='w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2'>
-                                <Image
-                                    src='/images/screen-studio.jpeg'
-                                    alt='Screen Studio'
-                                    width={40}
-                                    height={40}
-                                    className='object-contain'
+                                    src='/images/cofc-soccer.jpeg'
+                                    alt='College of Charleston men&rsquo;s soccer stadium on match night'
+                                    fill
+                                    className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
+                                    sizes='(max-width: 768px) 50vw, 280px'
                                 />
                             </div>
                         </div>
-                    </section>
+                        <div className='p-8'>
+                            <Eyebrow className='text-[#7a1f2b]'>Sports marketing</Eyebrow>
+                            <h3 className='mt-3 font-display text-3xl tracking-tight'>College of Charleston Athletics</h3>
+                            <p className='mt-3 text-sm leading-relaxed text-neutral-600'>Campaigns, matchday events, and sponsorship fulfillment for Men&rsquo;s Soccer, Baseball, and Basketball.</p>
+                            <p className='mt-6 inline-flex items-center gap-1 text-sm font-medium'>
+                                Learn more <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                            </p>
+                        </div>
+                    </Link>
 
-                    {/* Contact and Stats Sections */}
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                        {/* Contact Section */}
-                        <section className='relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-6 border border-gray-700'>
-                            <h2 className='text-2xl font-mono mb-4'>Contact</h2>
-                            <div className='space-y-4'>
-                                <Link
-                                    href='mailto:hardisterw@g.cofc.edu'
-                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors group'
-                                >
-                                    <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors'>
-                                        <Mail className='w-4 h-4 text-gray-300' />
-                                    </div>
-                                    <span className='text-gray-300'>Email Me</span>
-                                </Link>
-                                <Link
-                                    href='tel:+15034905874'
-                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors group'
-                                >
-                                    <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors'>
-                                        <Phone className='w-4 h-4 text-gray-300' />
-                                    </div>
-                                    <span className='text-gray-300'>Call Me</span>
-                                </Link>
-                                <Link
-                                    href='/Cole-Resume.pdf'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-700 transition-colors group'
-                                >
-                                    <div className='w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center group-hover:bg-gray-600 transition-colors'>
-                                        <FileText className='w-4 h-4 text-gray-300' />
-                                    </div>
-                                    <span className='text-gray-300'>View Resume</span>
-                                </Link>
-                            </div>
-                        </section>
-
-                        {/* Achievement Stats Section */}
-                        <section className='bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700'>
-                            <div className='space-y-6'>
-                                <div>
-                                    <h3 className='text-3xl font-bold text-white mb-1'>2K+</h3>
-                                    <p className='text-gray-400 text-sm'>LinkedIn Followers Grown</p>
-                                </div>
-                                <div>
-                                    <h3 className='text-3xl font-bold text-white mb-1'>120K+</h3>
-                                    <p className='text-gray-400 text-sm'>Organic Impressions</p>
-                                </div>
-                                <div>
-                                    <h3 className='text-3xl font-bold text-white mb-1'>40%</h3>
-                                    <p className='text-gray-400 text-sm'>Fan Engagement Increase</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
+                    <Link
+                        href='/projects/project4'
+                        className='group overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-shadow hover:shadow-xl hover:shadow-neutral-900/5'
+                    >
+                        <AnalyticsThumb />
+                        <div className='p-8'>
+                            <Eyebrow className='text-[#0a66c2]'>Analytics &amp; reporting</Eyebrow>
+                            <h3 className='mt-3 font-display text-3xl tracking-tight'>LinkedIn &amp; Agency Analytics</h3>
+                            <p className='mt-3 text-sm leading-relaxed text-neutral-600'>Turning LinkedIn and organic search data into content decisions, across CLEATUS and 30+ SearchX clients.</p>
+                            <p className='mt-6 inline-flex items-center gap-1 text-sm font-medium'>
+                                Learn more <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                            </p>
+                        </div>
+                    </Link>
                 </div>
-            </div>
-        </div>
+
+                <p className='mt-8 text-sm text-neutral-500'>
+                    Also:{' '}
+                    <Link
+                        href='/projects/project3'
+                        className='font-medium text-neutral-900 underline underline-offset-4'
+                    >
+                        Social media management
+                    </Link>
+                    {' · '}
+                    <Link
+                        href='/tools'
+                        className='font-medium text-neutral-900 underline underline-offset-4'
+                    >
+                        Tools &amp; workflow
+                    </Link>
+                </p>
+            </section>
+        </SiteShell>
     )
 }

@@ -1,157 +1,72 @@
-'use client'
-
-import Link from 'next/link'
+import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowLeft } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Roboto } from 'next/font/google'
+import { SiteShell } from '@/components/site/shell'
+import { CaseHero, CaseSection, Cards } from '@/components/site/case-study'
 
-const roboto = Roboto({
-    weight: ['400', '500', '700'],
-    subsets: ['latin'],
-})
+export const metadata: Metadata = {
+    title: 'LinkedIn & Agency Analytics Case Study',
+    description: 'How I use LinkedIn analytics at CLEATUS and SEMrush, Google Search Console, and GA4 at SearchX to turn performance data into content decisions.',
+}
 
 export default function Project4Page() {
     return (
-        <div className={`min-h-screen bg-gray-800 text-white p-6 ${roboto.className}`}>
-            <div className='max-w-4xl mx-auto'>
-                <div className='mb-8'>
-                    <Button
-                        variant='ghost'
-                        size='sm'
-                        asChild
-                    >
-                        <Link
-                            href='/'
-                            className='flex items-center gap-2'
-                        >
-                            <ArrowLeft className='w-4 h-4' />
-                            Home
-                        </Link>
-                    </Button>
-                </div>
+        <SiteShell>
+            <CaseHero
+                eyebrow='Case study · Analytics & reporting'
+                accent='text-[#0a66c2]'
+                title='Turning performance data into content decisions.'
+                summary='From LinkedIn analytics at CLEATUS to organic search reporting across 30+ clients at SearchX, I use data to decide what to write next and to show what worked.'
+                meta={[
+                    { label: 'Roles', value: 'CLEATUS · SearchX' },
+                    { label: 'Tools', value: 'LinkedIn Analytics, SEMrush, GSC, GA4' },
+                    { label: 'LinkedIn period shown', value: 'Oct – Apr' },
+                ]}
+                stats={[
+                    { value: '119,624', label: 'LinkedIn impressions tracked at CLEATUS' },
+                    { value: '30+', label: 'SEO clients reported on at SearchX' },
+                    { value: '100+', label: 'Content pieces a month, guided by the data' },
+                ]}
+            />
 
-                <h1 className='text-4xl font-medium mb-8'>Agency Analytics & Documentation</h1>
-
-                {/* Analytics Image */}
-                <div className='mb-8'>
-                    <div className='relative aspect-[16/9] bg-gray-900 rounded-lg overflow-hidden'>
+            <div className='mx-auto max-w-6xl px-6 pb-16'>
+                <figure>
+                    <div className='relative aspect-[1768/1088] overflow-hidden rounded-3xl border border-neutral-200 bg-white'>
                         <Image
                             src='/images/linkedin-analytics.png'
-                            alt='Agency Analytics'
+                            alt='LinkedIn analytics: 119,624 impressions, 830 reactions, 84 comments, 89 reposts, with monthly impressions chart from October to April'
                             fill
-                            className='object-cover'
-                            sizes='(max-width: 768px) 100vw, 800px'
+                            className='object-contain'
+                            sizes='(max-width: 1152px) 100vw, 1152px'
+                            priority
                         />
                     </div>
-                </div>
-
-                <div className='space-y-6'>
-                    <div>
-                        <h2 className='text-2xl font-medium mb-2'>Project Overview</h2>
-                        <p className='text-gray-300'>
-                            Comprehensive <span className='font-bold'>marketing analytics platform</span> and <span className='font-bold'>API documentation</span> project focused
-                            on providing data-driven insights and comprehensive guides for marketing agencies and professionals.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2 className='text-2xl font-medium mb-2'>Our Challenge</h2>
-                        <p className='text-gray-300'>
-                            Marketing agencies needed a centralized solution for <span className='font-bold'>tracking performance metrics</span> across multiple platforms while
-                            having access to <span className='font-bold'>clear, comprehensive documentation</span> for implementing various marketing tools and APIs.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2 className='text-2xl font-medium mb-2'>Our Solution</h2>
-                        <p className='text-gray-300'>We developed a comprehensive analytics and documentation system that includes:</p>
-                        <ul className='list-disc list-inside text-gray-300 mt-4 space-y-2'>
-                            <li>
-                                <span className='font-bold'>Multi-Platform Analytics Dashboard</span> - Unified view of performance across social media, email, and web
-                            </li>
-                            <li>
-                                <span className='font-bold'>Real-Time Reporting</span> - Live data updates and customizable reporting tools
-                            </li>
-                            <li>
-                                <span className='font-bold'>API Documentation</span> - Comprehensive guides for integrating marketing tools
-                            </li>
-                            <li>
-                                <span className='font-bold'>Data Visualization</span> - Interactive charts and graphs for better insights
-                            </li>
-                            <li>
-                                <span className='font-bold'>Performance Benchmarking</span> - Industry standards and competitive analysis
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h2 className='text-2xl font-medium mb-2'>Key Features</h2>
-                        <p className='text-gray-300'>The analytics platform provides:</p>
-                        <ul className='list-disc list-inside text-gray-300 mt-4 space-y-2'>
-                            <li>
-                                <span className='font-bold'>LinkedIn Analytics Integration</span> - Deep insights into professional network performance
-                            </li>
-                            <li>
-                                <span className='font-bold'>Custom KPI Tracking</span> - Tailored metrics for different marketing objectives
-                            </li>
-                            <li>
-                                <span className='font-bold'>Automated Report Generation</span> - Scheduled reports for stakeholders
-                            </li>
-                            <li>
-                                <span className='font-bold'>API Rate Limit Management</span> - Efficient usage of third-party APIs
-                            </li>
-                            <li>
-                                <span className='font-bold'>Documentation Portal</span> - Searchable guides and tutorials
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h2 className='text-2xl font-medium mb-2'>Technical Implementation</h2>
-                        <p className='text-gray-300'>Built using modern technologies and best practices:</p>
-                        <ul className='list-disc list-inside text-gray-300 mt-4 space-y-2'>
-                            <li>
-                                <span className='font-bold'>Next.js & React</span> - Modern web application framework
-                            </li>
-                            <li>
-                                <span className='font-bold'>TypeScript</span> - Type-safe development environment
-                            </li>
-                            <li>
-                                <span className='font-bold'>API Integrations</span> - LinkedIn, Twitter, Facebook, and Google Analytics
-                            </li>
-                            <li>
-                                <span className='font-bold'>Database Management</span> - Efficient data storage and retrieval
-                            </li>
-                            <li>
-                                <span className='font-bold'>Documentation Tools</span> - Interactive API documentation
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h2 className='text-2xl font-medium mb-2'>Results</h2>
-                        <p className='text-gray-300'>The analytics and documentation platform has delivered:</p>
-                        <ul className='list-disc list-inside text-gray-300 mt-4 space-y-2'>
-                            <li>
-                                <span className='font-bold'>Improved Decision Making</span> - Data-driven insights for marketing strategies
-                            </li>
-                            <li>
-                                <span className='font-bold'>Time Savings</span> - Automated reporting reduced manual work by 70%
-                            </li>
-                            <li>
-                                <span className='font-bold'>Better API Adoption</span> - Clear documentation increased integration success rate
-                            </li>
-                            <li>
-                                <span className='font-bold'>Enhanced Performance Tracking</span> - Real-time monitoring of campaign effectiveness
-                            </li>
-                            <li>
-                                <span className='font-bold'>Scalable Solution</span> - Platform supports multiple clients and use cases
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    <figcaption className='mt-3 text-sm text-neutral-400'>CLEATUS LinkedIn analytics, October through April.</figcaption>
+                </figure>
             </div>
-        </div>
+
+            <CaseSection
+                label='LinkedIn at CLEATUS'
+                title='Measure every post, then double down on what works.'
+            >
+                <p>
+                    At CLEATUS I tracked campaign performance and ran data-driven marketing analysis on every post and article. Impressions, reactions, comments, and reposts
+                    showed which topics earned attention from government contractors, and that shaped the next month&rsquo;s editorial calendar.
+                </p>
+            </CaseSection>
+
+            <CaseSection
+                label='Search at SearchX'
+                title='Organic data across 30+ clients.'
+            >
+                <Cards
+                    items={[
+                        { title: 'Ranking opportunities', body: 'Analyze organic performance in SEMrush, Google Search Console, and GA4 to surface keywords worth chasing.' },
+                        { title: 'Content gaps', body: 'Identify the pages and topics each client is missing, then turn them into briefs.' },
+                        { title: 'Growth reporting', body: 'Report on month-over-month keyword and traffic growth for clients in home services, healthcare, wellness, real estate, and food & beverage.' },
+                        { title: 'Efficiency with AI', body: 'Implement AI tools to speed up my own workflows and the business as a whole.' },
+                    ]}
+                />
+            </CaseSection>
+        </SiteShell>
     )
 }

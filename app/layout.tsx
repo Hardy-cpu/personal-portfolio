@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
+import { Inter, Instrument_Serif } from 'next/font/google'
 import './globals.css'
+
+const ui = Inter({ subsets: ['latin'], variable: '--font-ui', display: 'swap' })
+const display = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-display', display: 'swap' })
 
 export const metadata: Metadata = {
     title: {
-        default: 'Cole Hardister - Digital Marketing & Communications Expert',
+        default: 'Cole Hardister - Digital Marketing, SEO & Sports Marketing',
         template: '%s | Cole Hardister',
     },
     description:
-        'Digital marketing strategist who transforms businesses through marketing, distribution, and go-to-market strategy. Grew LinkedIn from 0 to 2K+ followers, generated 120K+ organic impressions, and boosted fan engagement by 40%.',
+        'Digital marketer, SEO specialist, and sports marketer. Grew CLEATUS on LinkedIn from 0 to 3,000+ followers and 120K+ organic impressions. SEO and Content Manager at SearchX.',
     keywords: [
         'digital marketing',
         'marketing strategy',
@@ -37,9 +41,9 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: 'https://colehardister.com', // Update with actual domain
-        title: 'Cole Hardister - Digital Marketing & Communications Expert',
+        title: 'Cole Hardister - Digital Marketing, SEO & Sports Marketing',
         description:
-            'Digital marketing strategist who transforms businesses through marketing, distribution, and go-to-market strategy. Grew LinkedIn from 0 to 2K+ followers, generated 120K+ organic impressions.',
+            'Digital marketer, SEO specialist, and sports marketer. Grew CLEATUS on LinkedIn from 0 to 3,000+ followers and 120K+ organic impressions.',
         siteName: 'Cole Hardister Portfolio',
         images: [
             {
@@ -52,8 +56,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Cole Hardister - Digital Marketing & Communications Expert',
-        description: 'Digital marketing strategist who transforms businesses through marketing, distribution, and go-to-market strategy.',
+        title: 'Cole Hardister - Digital Marketing, SEO & Sports Marketing',
+        description: 'Digital marketer, SEO specialist, and sports marketer. Former Head of Marketing and Communications at CLEATUS.',
         images: ['/images/cole-profile.JPEG'],
         creator: '@colehardister', // Update with actual Twitter handle
     },
@@ -82,7 +86,10 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang='en'>
+        <html
+            lang='en'
+            className={`${ui.variable} ${display.variable}`}
+        >
             <head>
                 <link
                     rel='icon'
@@ -104,7 +111,7 @@ export default function RootLayout({
                 />
                 <meta
                     name='theme-color'
-                    content='#1f2937'
+                    content='#fafaf7'
                 />
             </head>
             <body>{children}</body>
