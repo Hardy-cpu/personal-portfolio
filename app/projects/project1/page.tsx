@@ -228,14 +228,14 @@ export default function Project1Page() {
                     </li>
                     <li>A reliable channel for new customer acquisition, where there had been none.</li>
                 </ul>
-                <Link
+                <a
                     href='/CLEATUS-InsightsReport.pdf'
                     target='_blank'
                     rel='noopener noreferrer'
                     className='!mt-8 inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700'
                 >
                     <FileText className='h-4 w-4' /> Read the CLEATUS Insights Report <ArrowUpRight className='h-4 w-4' />
-                </Link>
+                </a>
             </CaseSection>
         </SiteShell>
     )

@@ -26,16 +26,29 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                         Cole Hardister
                     </Link>
                     <nav className='flex items-center gap-6 text-sm text-neutral-600'>
-                        {NAV.map((item) => (
-                            <Link
-                                key={item.label}
-                                href={item.href}
-                                {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                className='transition-colors hover:text-neutral-900'
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
+                        {NAV.map((item) => {
+                            const className = 'transition-colors hover:text-neutral-900'
+                            // PDFs are files, not pages: a plain <a> stops Next from prefetching them (which 404s).
+                            return item.external ? (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className={className}
+                                >
+                                    {item.label}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                    className={className}
+                                >
+                                    {item.label}
+                                </Link>
+                            )
+                        })}
                         <Link
                             href={`mailto:${CONTACT.email}`}
                             className='hidden rounded-full bg-neutral-900 px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-700 sm:inline-block'
@@ -65,7 +78,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                             { label: 'Résumé', value: 'Download PDF', href: CONTACT.resume },
                         ].map((row) => (
                             <li key={row.label}>
-                                <Link
+                                <a
                                     href={row.href}
                                     {...(row.href.startsWith('http') || row.href.endsWith('.pdf') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                                     className='group flex items-center justify-between border-b border-neutral-200 pb-3 transition-colors hover:border-neutral-900'
@@ -75,7 +88,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                                         {row.value}
                                         <ArrowUpRight className='h-4 w-4 opacity-40 transition-opacity group-hover:opacity-100' />
                                     </span>
-                                </Link>
+                                </a>
                             </li>
                         ))}
                     </ul>
