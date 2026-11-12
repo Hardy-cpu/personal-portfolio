@@ -135,7 +135,7 @@ export default function Portfolio() {
                             </span>
                         </div>
                     </div>
-                    <div className='relative min-h-[260px] border-t border-neutral-200 bg-white md:border-l md:border-t-0'>
+                    <div className='relative aspect-[1.91/1] border-t border-neutral-200 bg-white md:aspect-auto md:min-h-[260px] md:border-l md:border-t-0'>
                         <Image
                             src='/images/cover.png'
                             alt='CLEATUS: Find. Bid. Win! Government contracts with AI'
