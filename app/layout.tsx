@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Instrument_Serif } from 'next/font/google'
+import { SITE_URL } from '@/lib/site'
 import './globals.css'
 
 const ui = Inter({ subsets: ['latin'], variable: '--font-ui', display: 'swap' })
@@ -33,24 +34,20 @@ export const metadata: Metadata = {
         address: false,
         telephone: false,
     },
-    metadataBase: new URL('https://colehardister.com'), // Update with actual domain
-    alternates: {
-        canonical: '/',
-    },
+    metadataBase: new URL(SITE_URL),
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://colehardister.com', // Update with actual domain
         title: 'Cole Hardister - Digital Marketing, SEO & Sports Marketing',
         description:
             'Digital marketer, SEO specialist, and sports marketer. Grew CLEATUS on LinkedIn from 0 to 3,000+ followers and 120K+ organic impressions.',
         siteName: 'Cole Hardister Portfolio',
         images: [
             {
-                url: '/images/cole-profile.JPEG',
+                url: '/images/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'Cole Hardister - Digital Marketing Expert',
+                alt: 'Cole Hardister: digital marketing, SEO, and sports marketing',
             },
         ],
     },
@@ -58,8 +55,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Cole Hardister - Digital Marketing, SEO & Sports Marketing',
         description: 'Digital marketer, SEO specialist, and sports marketer. Former Head of Marketing and Communications at CLEATUS.',
-        images: ['/images/cole-profile.JPEG'],
-        creator: '@colehardister', // Update with actual Twitter handle
+        images: ['/images/og-image.png'],
     },
     robots: {
         index: true,

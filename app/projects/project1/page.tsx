@@ -7,20 +7,21 @@ import { CaseHero, CaseSection, Cards } from '@/components/site/case-study'
 import { ARTICLES, COMMUNITY_POSTS, CONTENT_COUNTS, PRODUCT_POSTS, PROOF_POSTS, findArticle, type ContentItem } from '@/lib/cleatus-content'
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/projects/project1' },
     title: 'CLEATUS: LinkedIn Growth Case Study',
     description: 'How I grew CLEATUS on LinkedIn from zero to 3,000+ followers and nearly 120K impressions, creating a reliable customer acquisition channel.',
 }
 
 const FEATURED_ARTICLES = [
     {
-        src: '/images/article-1.png',
+        src: '/images/article-1.webp',
         ...findArticle('Agentic AI is the future for GovCon Business Owners'),
         title: 'Agentic AI in Government Contracting: How Small Businesses Can Compete with Industry Giants in 2025',
     },
-    { src: '/images/article-2.png', ...findArticle('Federal Acquisition Regulation'), title: 'Federal Acquisition Reform: A New Era for Small Business Contractors' },
-    { src: '/images/article-3.png', ...findArticle('Understanding DRP'), title: 'Understanding the Federal Deferred Resignation Program for GovCon Business Owners' },
-    { src: '/images/article-4.png', ...findArticle('8(a) Certifications'), title: 'Navigating SBA 8(a) Recertification Changes: Compliance and Growth Strategies' },
-    { src: '/images/article-5.png', ...findArticle('Federal Contract Analysis'), title: 'Revolutionizing Federal Contract Analysis for Small Businesses: Making UCF Work Smarter' },
+    { src: '/images/article-2.webp', ...findArticle('Federal Acquisition Regulation'), title: 'Federal Acquisition Reform: A New Era for Small Business Contractors' },
+    { src: '/images/article-3.webp', ...findArticle('Understanding DRP'), title: 'Understanding the Federal Deferred Resignation Program for GovCon Business Owners' },
+    { src: '/images/article-4.webp', ...findArticle('8(a) Certifications'), title: 'Navigating SBA 8(a) Recertification Changes: Compliance and Growth Strategies' },
+    { src: '/images/article-5.webp', ...findArticle('Federal Contract Analysis'), title: 'Revolutionizing Federal Contract Analysis for Small Businesses: Making UCF Work Smarter' },
 ]
 
 const TOOLS = [

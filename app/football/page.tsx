@@ -7,6 +7,7 @@ import { CaseHero, CaseSection } from '@/components/site/case-study'
 import { FOOTBALL_HANDLE, FOOTBALL_POSTS, FOOTBALL_URL } from '@/lib/football-content'
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/football' },
     title: `Football Writing on X (@${FOOTBALL_HANDLE})`,
     description: 'Creative writing and football analysis on European football and Manchester United, published on X as @HardyFootball.',
 }
@@ -30,7 +31,7 @@ export default function Project3Page() {
             <div className='mx-auto max-w-6xl px-6 pb-16'>
                 <div className='relative aspect-[16/5] overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100'>
                     <Image
-                        src='/images/hardyfootball-banner.png'
+                        src='/images/hardyfootball-banner.webp'
                         alt='The @HardyFootball profile banner on X'
                         fill
                         className='object-cover'

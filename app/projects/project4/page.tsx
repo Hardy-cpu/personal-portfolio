@@ -4,6 +4,7 @@ import { SiteShell } from '@/components/site/shell'
 import { CaseHero, CaseSection, Cards } from '@/components/site/case-study'
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/projects/project4' },
     title: 'LinkedIn & Agency Analytics Case Study',
     description: 'How I use LinkedIn analytics at CLEATUS and SEMrush, Google Search Console, and GA4 at SearchX to turn performance data into content decisions.',
 }

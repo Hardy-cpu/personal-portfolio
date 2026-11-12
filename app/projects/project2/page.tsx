@@ -4,6 +4,7 @@ import { SiteShell } from '@/components/site/shell'
 import { CaseHero, CaseSection, Cards } from '@/components/site/case-study'
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/projects/project2' },
     title: 'College of Charleston Sports Marketing Case Study',
     description:
         'Sports marketing intern for College of Charleston Athletics: multi-channel campaigns, matchday events, sponsorship fulfillment, and fan storytelling for Men’s Soccer, Baseball, and Basketball.',

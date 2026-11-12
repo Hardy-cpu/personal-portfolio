@@ -1,8 +1,14 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { CONTACT, Eyebrow, SiteShell, Stat } from '@/components/site/shell'
 import { AnalyticsThumb } from '@/components/site/analytics-thumb'
+import { SITE_URL } from '@/lib/site'
+
+export const metadata: Metadata = {
+    alternates: { canonical: '/' },
+}
 
 const structuredData = {
     '@context': 'https://schema.org',
@@ -10,8 +16,8 @@ const structuredData = {
     name: 'Cole Hardister',
     jobTitle: 'SEO & Content Manager',
     description: 'SEO and content marketer. Former Head of Marketing and Communications at CLEATUS, where LinkedIn grew from zero to 3,000+ followers.',
-    url: 'https://colehardister.com',
-    image: 'https://colehardister.com/images/cole-profile.JPEG',
+    url: SITE_URL,
+    image: `${SITE_URL}/images/og-image.png`,
     email: CONTACT.email,
     telephone: '+15034905874',
     worksFor: {
@@ -28,7 +34,7 @@ const structuredData = {
         name: 'SEO & Content Manager',
         description: 'Manages SEO strategy and content production for 30+ clients, with a background in B2B startup marketing and sports marketing',
     },
-    sameAs: [CONTACT.linkedin, 'https://twitter.com/colehardister'],
+    sameAs: [CONTACT.linkedin],
 }
 
 export default function Portfolio() {
@@ -43,10 +49,10 @@ export default function Portfolio() {
             <section className='mx-auto max-w-6xl px-6 pb-20 pt-20 md:pt-28'>
                 <div className='flex items-center gap-4'>
                     <Image
-                        src='/images/cole-profile.JPEG'
+                        src='/images/cole-avatar.webp'
                         alt='Cole Hardister'
-                        width={56}
-                        height={56}
+                        width={400}
+                        height={400}
                         className='h-14 w-14 rounded-full object-cover'
                         priority
                     />
@@ -206,7 +212,7 @@ export default function Portfolio() {
                 >
                     <div className='relative aspect-[3/1] overflow-hidden border-b border-neutral-200 md:aspect-auto md:min-h-[200px] md:border-b-0 md:border-r'>
                         <Image
-                            src='/images/hardyfootball-banner.png'
+                            src='/images/hardyfootball-banner.webp'
                             alt='The @HardyFootball profile banner on X'
                             fill
                             className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
