@@ -201,7 +201,7 @@ export default function Portfolio() {
 
                 {/* Beyond work: football writing */}
                 <Link
-                    href='/projects/project3'
+                    href='/football'
                     className='group mt-6 grid overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-shadow hover:shadow-xl hover:shadow-neutral-900/5 md:grid-cols-[1.15fr_1fr]'
                 >
                     <div className='relative aspect-[3/1] overflow-hidden border-b border-neutral-200 md:aspect-auto md:min-h-[200px] md:border-b-0 md:border-r'>
@@ -224,16 +224,6 @@ export default function Portfolio() {
                         </p>
                     </div>
                 </Link>
-
-                <p className='mt-8 text-sm text-neutral-500'>
-                    Also:{' '}
-                    <Link
-                        href='/tools'
-                        className='font-medium text-neutral-900 underline underline-offset-4'
-                    >
-                        Tools &amp; workflow
-                    </Link>
-                </p>
             </section>
         </SiteShell>
     )

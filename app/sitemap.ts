@@ -1,50 +1,19 @@
 import { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/site'
+
+const ROUTES = [
+    { path: '', priority: 1 },
+    { path: '/projects/project1', priority: 0.9 },
+    { path: '/projects/project2', priority: 0.8 },
+    { path: '/projects/project4', priority: 0.8 },
+    { path: '/football', priority: 0.6 },
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://colehardister.com' // Update with actual domain
-
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/projects`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/projects/project1`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/projects/project2`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/projects/project3`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/projects/project4`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/tools`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-    ]
+    return ROUTES.map(({ path, priority }) => ({
+        url: `${SITE_URL}${path}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority,
+    }))
 }

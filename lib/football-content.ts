@@ -1,4 +1,4 @@
-// Football writing on X (@HardyFootball). Add posts here and they appear on /projects/project3.
+// Football writing on X (@HardyFootball). Add posts here and they appear on /football.
 
 export const FOOTBALL_HANDLE = 'HardyFootball'
 export const FOOTBALL_URL = `https://x.com/${FOOTBALL_HANDLE}`
