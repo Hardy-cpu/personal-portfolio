@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { CONTACT, Eyebrow, SiteShell, Stat } from '@/components/site/shell'
 import { AnalyticsThumb } from '@/components/site/analytics-thumb'
 import { SITE_URL } from '@/lib/site'
@@ -71,14 +71,6 @@ export default function Portfolio() {
                         className='inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700'
                     >
                         See my CLEATUS work <ArrowRight className='h-4 w-4' />
-                    </Link>
-                    <Link
-                        href={CONTACT.resume}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='inline-flex items-center gap-2 rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium transition-colors hover:border-neutral-900'
-                    >
-                        Résumé <ArrowUpRight className='h-4 w-4' />
                     </Link>
                 </div>
             </section>
