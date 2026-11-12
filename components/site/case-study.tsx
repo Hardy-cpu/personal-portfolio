@@ -24,7 +24,7 @@ export function CaseHero({
             <dl className='mt-10 flex flex-wrap gap-x-12 gap-y-4 text-sm'>
                 {meta.map((m) => (
                     <div key={m.label}>
-                        <dt className='text-neutral-400'>{m.label}</dt>
+                        <dt className='text-neutral-500'>{m.label}</dt>
                         <dd className='mt-1 font-medium'>{m.value}</dd>
                     </div>
                 ))}
@@ -45,7 +45,7 @@ export function CaseSection({ label, title, children, wide = false }: { label: s
     return (
         <section className='border-t border-neutral-200'>
             <div className={`mx-auto grid max-w-6xl gap-8 px-6 py-16 md:py-20 ${wide ? '' : 'md:grid-cols-[1fr_2.2fr]'}`}>
-                <Eyebrow className='pt-2 text-neutral-400'>{label}</Eyebrow>
+                <Eyebrow className='pt-2 text-neutral-600'>{label}</Eyebrow>
                 <div>
                     {title && <h2 className='mb-6 max-w-2xl font-display text-3xl leading-tight tracking-tight md:text-4xl'>{title}</h2>}
                     <div className={`space-y-5 text-[17px] leading-relaxed text-neutral-600 ${wide ? '' : 'max-w-2xl'}`}>{children}</div>

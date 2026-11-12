@@ -77,9 +77,9 @@ export default function Project3Page() {
                                     <div>
                                         <p className='font-medium text-neutral-900'>{post.title}</p>
                                         {post.note && <p className='mt-1 text-sm text-neutral-500'>{post.note}</p>}
-                                        <p className='mt-2 text-xs text-neutral-400'>{post.date}</p>
+                                        <p className='mt-2 text-xs text-neutral-500'>{post.date}</p>
                                     </div>
-                                    <ArrowUpRight className='h-4 w-4 shrink-0 text-neutral-400 transition-colors group-hover:text-neutral-900' />
+                                    <ArrowUpRight className='h-4 w-4 shrink-0 text-neutral-500 transition-colors group-hover:text-neutral-900' />
                                 </Link>
                             </li>
                         ))}

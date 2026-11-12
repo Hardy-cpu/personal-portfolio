@@ -41,7 +41,7 @@ export default function Project4Page() {
                             priority
                         />
                     </div>
-                    <figcaption className='mt-3 text-sm text-neutral-400'>CLEATUS LinkedIn analytics, October through April.</figcaption>
+                    <figcaption className='mt-3 text-sm text-neutral-500'>CLEATUS LinkedIn analytics, October through April.</figcaption>
                 </figure>
             </div>
 

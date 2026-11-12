@@ -18,7 +18,7 @@ export function AnalyticsThumb() {
                     >
                         <Image
                             src={t.src}
-                            alt={t.name}
+                            alt=''
                             width={24}
                             height={24}
                             className='h-full w-full object-contain'

@@ -56,7 +56,7 @@ export default function Portfolio() {
                         className='h-14 w-14 rounded-full object-cover'
                         priority
                     />
-                    <Eyebrow className='text-neutral-500'>Digital marketing &middot; SEO &middot; Sports marketing</Eyebrow>
+                    <Eyebrow className='text-neutral-600'>Digital marketing &middot; SEO &middot; Sports marketing</Eyebrow>
                 </div>
                 <h1 className='mt-8 max-w-4xl font-display text-5xl leading-[1.05] tracking-tight md:text-7xl'>
                     Digital marketer and SEO specialist with a <em className='text-[#243665]'>sports marketing</em> edge.
@@ -102,7 +102,7 @@ export default function Portfolio() {
                 id='work'
                 className='mx-auto max-w-6xl scroll-mt-20 px-6 py-24'
             >
-                <Eyebrow className='text-neutral-500'>Selected work</Eyebrow>
+                <Eyebrow className='text-neutral-600'>Selected work</Eyebrow>
                 <h2 className='mt-3 font-display text-4xl tracking-tight md:text-5xl'>Three projects that show how I work.</h2>
 
                 {/* Featured: CLEATUS */}
@@ -155,7 +155,7 @@ export default function Portfolio() {
                             <div className='relative overflow-hidden'>
                                 <Image
                                     src='/images/collegeathletics.jpeg'
-                                    alt='College of Charleston Cougars logo'
+                                    alt=''
                                     fill
                                     className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
                                     sizes='(max-width: 768px) 50vw, 280px'
@@ -164,7 +164,7 @@ export default function Portfolio() {
                             <div className='relative overflow-hidden'>
                                 <Image
                                     src='/images/cofc-soccer.jpeg'
-                                    alt='College of Charleston men&rsquo;s soccer stadium on match night'
+                                    alt=''
                                     fill
                                     className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
                                     sizes='(max-width: 768px) 50vw, 280px'
@@ -205,7 +205,7 @@ export default function Portfolio() {
                     <div className='relative aspect-[3/1] overflow-hidden border-b border-neutral-200 md:aspect-auto md:min-h-[200px] md:border-b-0 md:border-r'>
                         <Image
                             src='/images/hardyfootball-banner.webp'
-                            alt='The @HardyFootball profile banner on X'
+                            alt=''
                             fill
                             className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
                             sizes='(max-width: 768px) 100vw, 600px'

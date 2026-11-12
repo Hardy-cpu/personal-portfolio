@@ -93,7 +93,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                         ))}
                     </ul>
                 </div>
-                <div className='mx-auto max-w-6xl px-6 pb-10 text-xs text-neutral-400'>&copy; {new Date().getFullYear()} Cole Hardister</div>
+                <div className='mx-auto max-w-6xl px-6 pb-10 text-xs text-neutral-500'>&copy; {new Date().getFullYear()} Cole Hardister</div>
             </footer>
         </div>
     )

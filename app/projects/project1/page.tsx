@@ -116,7 +116,7 @@ export default function Project1Page() {
                             <div className='relative aspect-[4/3] overflow-hidden border-b border-neutral-200 bg-neutral-50'>
                                 <Image
                                     src={a.src}
-                                    alt={a.title}
+                                    alt=''
                                     fill
                                     className='object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]'
                                     sizes='(max-width: 640px) 100vw, 360px'
@@ -124,7 +124,7 @@ export default function Project1Page() {
                             </div>
                             <div className='p-4'>
                                 <p className='text-sm font-medium leading-snug text-neutral-900'>{a.title}</p>
-                                <p className='mt-2 flex items-center justify-between text-xs text-neutral-400'>
+                                <p className='mt-2 flex items-center justify-between text-xs text-neutral-500'>
                                     {a.date} <ArrowUpRight className='h-4 w-4 opacity-50 transition-opacity group-hover:opacity-100' />
                                 </p>
                             </div>
@@ -134,7 +134,7 @@ export default function Project1Page() {
                 <details className='group !mt-8 rounded-2xl border border-neutral-200 bg-white'>
                     <summary className='flex cursor-pointer list-none items-center justify-between p-5 text-sm font-medium text-neutral-900'>
                         All {CONTENT_COUNTS.articles} articles
-                        <span className='text-neutral-400 transition-transform group-open:rotate-45'>+</span>
+                        <span className='text-neutral-500 transition-transform group-open:rotate-45'>+</span>
                     </summary>
                     <LinkList
                         items={ARTICLES}
@@ -256,7 +256,7 @@ function LinkList({ items, className = '' }: { items: ContentItem[]; className?:
                         className='group flex items-baseline justify-between gap-4 border-b border-neutral-100 py-3 text-[15px] text-neutral-900 transition-colors hover:text-[#243665]'
                     >
                         <span className='underline-offset-4 group-hover:underline'>{item.title}</span>
-                        <span className='shrink-0 text-xs text-neutral-400'>{item.date}</span>
+                        <span className='shrink-0 text-xs text-neutral-500'>{item.date}</span>
                     </Link>
                 </li>
             ))}
@@ -269,7 +269,7 @@ function ContentGroup({ title, blurb, items }: { title: string; blurb: string; i
         <div className='rounded-2xl border border-neutral-200 bg-white p-6'>
             <div className='flex items-baseline justify-between'>
                 <h3 className='font-semibold text-neutral-900'>{title}</h3>
-                <span className='text-xs text-neutral-400'>{items.length} posts</span>
+                <span className='text-xs text-neutral-500'>{items.length} posts</span>
             </div>
             <p className='mt-1 text-sm text-neutral-500'>{blurb}</p>
             <LinkList
@@ -295,7 +295,7 @@ function ProductCard({ item }: { item: ContentItem }) {
                 </div>
                 <div className='p-4'>
                     <p className='text-sm font-medium text-neutral-900'>{item.title}</p>
-                    <p className='mt-1 text-xs text-neutral-400'>{item.date}</p>
+                    <p className='mt-1 text-xs text-neutral-500'>{item.date}</p>
                 </div>
             </div>
         )
@@ -309,9 +309,9 @@ function ProductCard({ item }: { item: ContentItem }) {
         >
             <div>
                 <p className='text-sm font-medium text-neutral-900'>{item.title}</p>
-                <p className='mt-1 text-xs text-neutral-400'>{item.date}</p>
+                <p className='mt-1 text-xs text-neutral-500'>{item.date}</p>
             </div>
-            <ArrowUpRight className='h-4 w-4 shrink-0 text-neutral-400 transition-colors group-hover:text-neutral-900' />
+            <ArrowUpRight className='h-4 w-4 shrink-0 text-neutral-500 transition-colors group-hover:text-neutral-900' />
         </Link>
     )
 }
