@@ -12,7 +12,7 @@ export function CaseHero({
     accent: string
     title: string
     summary: string
-    meta: { label: string; value: string }[]
+    meta: { label: string; value: string; href?: string }[]
     stats: { value: string; label: string }[]
 }) {
     return (
@@ -25,7 +25,20 @@ export function CaseHero({
                 {meta.map((m) => (
                     <div key={m.label}>
                         <dt className='text-neutral-500'>{m.label}</dt>
-                        <dd className='mt-1 font-medium'>{m.value}</dd>
+                        <dd className='mt-1 font-medium'>
+                            {m.href ? (
+                                <a
+                                    href={m.href}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900'
+                                >
+                                    {m.value} &#8599;
+                                </a>
+                            ) : (
+                                m.value
+                            )}
+                        </dd>
                     </div>
                 ))}
             </dl>

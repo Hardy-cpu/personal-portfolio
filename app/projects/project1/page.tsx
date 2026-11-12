@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { ArrowUpRight, FileText } from 'lucide-react'
 import { SiteShell } from '@/components/site/shell'
 import { CaseHero, CaseSection, Cards } from '@/components/site/case-study'
-import { ARTICLES, COMMUNITY_POSTS, CONTENT_COUNTS, PRODUCT_POSTS, PROOF_POSTS, findArticle, type ContentItem } from '@/lib/cleatus-content'
+import { CleatusRotator } from '@/components/site/cleatus-rotator'
+import { ARTICLES, CLEATUS_LINKEDIN, CLEATUS_WEBSITE, COMMUNITY_POSTS, CONTENT_COUNTS, PRODUCT_POSTS, PROOF_POSTS, findArticle, type ContentItem } from '@/lib/cleatus-content'
 
 export const metadata: Metadata = {
     alternates: { canonical: '/projects/project1' },
@@ -43,7 +44,8 @@ export default function Project1Page() {
                 meta={[
                     { label: 'Company', value: 'CLEATUS' },
                     { label: 'Role', value: 'Head of Marketing & Communications' },
-                    { label: 'Channel', value: 'LinkedIn' },
+                    { label: 'Website', value: 'cleat.ai', href: CLEATUS_WEBSITE },
+                    { label: 'LinkedIn', value: 'CLEATUS on LinkedIn', href: CLEATUS_LINKEDIN },
                     { label: 'Tenure', value: 'Aug 2024 – 2025' },
                 ]}
                 stats={[
@@ -55,16 +57,11 @@ export default function Project1Page() {
             />
 
             <div className='mx-auto max-w-6xl px-6 pb-16'>
-                <div className='relative aspect-[1.91/1] overflow-hidden rounded-3xl border border-neutral-200 bg-white'>
-                    <Image
-                        src='/images/cover.png'
-                        alt='CLEATUS: Find. Bid. Win! Government contracts with AI'
-                        fill
-                        className='object-cover'
-                        sizes='(max-width: 1152px) 100vw, 1152px'
-                        priority
-                    />
-                </div>
+                <CleatusRotator
+                    className='relative aspect-[1.91/1] rounded-3xl border border-neutral-200'
+                    sizes='(max-width: 1152px) 100vw, 1152px'
+                    controls
+                />
             </div>
 
             <CaseSection
@@ -101,8 +98,16 @@ export default function Project1Page() {
                 wide
             >
                 <p className='max-w-2xl'>
-                    {CONTENT_COUNTS.articles} long-form articles published on the CLEATUS LinkedIn page, each focused on a development small-business contractors need to
-                    understand. A few favorites are below, and every article links to the live post.
+                    {CONTENT_COUNTS.articles} long-form articles published on the{' '}
+                    <a
+                        href={CLEATUS_LINKEDIN}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900'
+                    >
+                        CLEATUS LinkedIn page
+                    </a>
+                    , each focused on a development small-business contractors need to understand. A few favorites are below, and every article links to the live post.
                 </p>
                 <div className='!mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3'>
                     {FEATURED_ARTICLES.map((a) => (

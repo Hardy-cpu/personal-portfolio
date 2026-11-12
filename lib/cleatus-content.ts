@@ -104,3 +104,6 @@ export function findArticle(title: string) {
     if (!match) throw new Error(`Unknown CLEATUS article: ${title}`)
     return match
 }
+
+export const CLEATUS_WEBSITE = 'https://www.cleat.ai/'
+export const CLEATUS_LINKEDIN = 'https://www.linkedin.com/company/cleatus-ai/posts/?feedView=all'

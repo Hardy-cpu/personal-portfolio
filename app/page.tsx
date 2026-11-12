@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { CONTACT, Eyebrow, SiteShell, Stat } from '@/components/site/shell'
 import { AnalyticsThumb } from '@/components/site/analytics-thumb'
+import { CleatusRotator } from '@/components/site/cleatus-rotator'
+import { CLEATUS_LINKEDIN, CLEATUS_WEBSITE } from '@/lib/cleatus-content'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -106,17 +108,40 @@ export default function Portfolio() {
                 <h2 className='mt-3 font-display text-4xl tracking-tight md:text-5xl'>Three projects that show how I work.</h2>
 
                 {/* Featured: CLEATUS */}
-                <Link
-                    href='/projects/project1'
-                    className='group mt-12 grid overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-shadow hover:shadow-xl hover:shadow-neutral-900/5 md:grid-cols-[1fr_1.15fr]'
-                >
+                <div className='group relative mt-12 grid overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-shadow hover:shadow-xl hover:shadow-neutral-900/5 md:grid-cols-[1fr_1.15fr]'>
                     <div className='flex flex-col justify-between p-8 md:p-12'>
                         <div>
                             <Eyebrow className='text-[#243665]'>Featured &middot; Marketing &amp; Communications</Eyebrow>
-                            <h3 className='mt-4 font-display text-4xl tracking-tight md:text-5xl'>CLEATUS</h3>
+                            <h3 className='mt-4 font-display text-4xl tracking-tight md:text-5xl'>
+                                {/* Stretched link: the whole card opens the case study, while the links below stay clickable */}
+                                <Link
+                                    href='/projects/project1'
+                                    className="after:absolute after:inset-0 after:z-10 after:content-['']"
+                                >
+                                    CLEATUS
+                                </Link>
+                            </h3>
                             <p className='mt-4 leading-relaxed text-neutral-600'>
                                 An AI platform for government contracting had almost no marketing presence. I built a LinkedIn content engine that became a reliable customer
                                 acquisition channel.
+                            </p>
+                            <p className='relative z-20 mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium'>
+                                <a
+                                    href={CLEATUS_WEBSITE}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900'
+                                >
+                                    Visit cleat.ai &#8599;
+                                </a>
+                                <a
+                                    href={CLEATUS_LINKEDIN}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-900'
+                                >
+                                    CLEATUS on LinkedIn &#8599;
+                                </a>
                             </p>
                         </div>
                         <div className='mt-10 flex items-end justify-between gap-6'>
@@ -136,15 +161,12 @@ export default function Portfolio() {
                         </div>
                     </div>
                     <div className='relative aspect-[1.91/1] border-t border-neutral-200 bg-white md:aspect-auto md:min-h-[260px] md:border-l md:border-t-0'>
-                        <Image
-                            src='/images/cover.png'
-                            alt='CLEATUS: Find. Bid. Win! Government contracts with AI'
-                            fill
-                            className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
+                        <CleatusRotator
+                            className='absolute inset-0'
                             sizes='(max-width: 768px) 100vw, 600px'
                         />
                     </div>
-                </Link>
+                </div>
 
                 <div className='mt-6 grid gap-6 md:grid-cols-2'>
                     <Link
