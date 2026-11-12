@@ -32,7 +32,7 @@ const structuredData = {
     hasOccupation: {
         '@type': 'Occupation',
         name: 'SEO & Content Manager',
-        description: 'Manages SEO strategy and content production for 30+ clients, with a background in B2B startup marketing and sports marketing',
+        description: 'Manages SEO strategy and content production for 30 clients, with a background in B2B startup marketing and sports marketing',
     },
     sameAs: [CONTACT.linkedin],
 }
@@ -62,7 +62,7 @@ export default function Portfolio() {
                     Digital marketer and SEO specialist with a <em className='text-[#243665]'>sports marketing</em> edge.
                 </h1>
                 <p className='mt-8 max-w-2xl text-lg leading-relaxed text-neutral-600'>
-                    I&rsquo;m Cole Hardister. At SearchX I manage SEO and content for 30+ clients. As Head of Marketing and Communications at CLEATUS, I grew LinkedIn from zero to
+                    I&rsquo;m Cole Hardister. At SearchX I manage SEO and content for 30 clients. As Head of Marketing and Communications at CLEATUS, I grew LinkedIn from zero to
                     3,000+ followers. Before that, I ran campaigns and matchday marketing for Division I athletics at the College of Charleston.
                 </p>
                 <div className='mt-10 flex flex-wrap items-center gap-3'>
@@ -91,8 +91,8 @@ export default function Portfolio() {
                         label='Articles and posts written for CLEATUS'
                     />
                     <Stat
-                        value='30+'
-                        label='SEO clients managed at SearchX'
+                        value='30'
+                        label='SEO and content clients at SearchX'
                     />
                 </div>
             </section>
@@ -189,7 +189,7 @@ export default function Portfolio() {
                         <div className='p-8'>
                             <Eyebrow className='text-[#0a66c2]'>Analytics &amp; reporting</Eyebrow>
                             <h3 className='mt-3 font-display text-3xl tracking-tight'>LinkedIn &amp; Agency Analytics</h3>
-                            <p className='mt-3 text-sm leading-relaxed text-neutral-600'>Turning LinkedIn and organic search data into content decisions, across CLEATUS and 30+ SearchX clients.</p>
+                            <p className='mt-3 text-sm leading-relaxed text-neutral-600'>Turning LinkedIn and organic search data into content decisions, across CLEATUS and 30 SearchX clients.</p>
                             <p className='mt-6 inline-flex items-center gap-1 text-sm font-medium'>
                                 Learn more <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
                             </p>

@@ -16,7 +16,7 @@ export default function Project4Page() {
                 eyebrow='Case study · Analytics & reporting'
                 accent='text-[#0a66c2]'
                 title='Turning performance data into content decisions.'
-                summary='From LinkedIn analytics at CLEATUS to organic search reporting across 30+ clients at SearchX, I use data to decide what to write next and to show what worked.'
+                summary='From LinkedIn analytics at CLEATUS to organic search reporting across 30 clients at SearchX, I use data to decide what to write next and to show what worked.'
                 meta={[
                     { label: 'Roles', value: 'CLEATUS · SearchX' },
                     { label: 'Tools', value: 'LinkedIn Analytics, SEMrush, GSC, GA4' },
@@ -24,7 +24,7 @@ export default function Project4Page() {
                 ]}
                 stats={[
                     { value: '119,624', label: 'LinkedIn impressions tracked at CLEATUS' },
-                    { value: '30+', label: 'SEO clients reported on at SearchX' },
+                    { value: '30', label: 'SEO and content clients at SearchX' },
                     { value: '100+', label: 'Content pieces a month, guided by the data' },
                 ]}
             />
@@ -57,7 +57,7 @@ export default function Project4Page() {
 
             <CaseSection
                 label='Search at SearchX'
-                title='Organic data across 30+ clients.'
+                title='Organic data across 30 clients.'
             >
                 <Cards
                     items={[
