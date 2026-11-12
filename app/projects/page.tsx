@@ -29,9 +29,9 @@ const PROJECTS = [
     },
     {
         href: '/projects/project3',
-        tag: 'Social media',
-        title: 'Social Media Management',
-        body: 'Building brand presence across platforms with strategic content.',
+        tag: 'Beyond work',
+        title: 'Football Writing on X',
+        body: '@HardyFootball: creative writing and analysis on European football and Manchester United.',
     },
 ]
 

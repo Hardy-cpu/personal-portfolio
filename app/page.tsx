@@ -199,15 +199,34 @@ export default function Portfolio() {
                     </Link>
                 </div>
 
+                {/* Beyond work: football writing */}
+                <Link
+                    href='/projects/project3'
+                    className='group mt-6 grid overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-shadow hover:shadow-xl hover:shadow-neutral-900/5 md:grid-cols-[1.15fr_1fr]'
+                >
+                    <div className='relative aspect-[3/1] overflow-hidden border-b border-neutral-200 md:aspect-auto md:min-h-[200px] md:border-b-0 md:border-r'>
+                        <Image
+                            src='/images/hardyfootball-banner.png'
+                            alt='The @HardyFootball profile banner on X'
+                            fill
+                            className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
+                            sizes='(max-width: 768px) 100vw, 600px'
+                        />
+                    </div>
+                    <div className='flex flex-col justify-center p-8'>
+                        <Eyebrow className='text-[#c8102e]'>Beyond work &middot; Football writing</Eyebrow>
+                        <h3 className='mt-3 font-display text-3xl tracking-tight'>@HardyFootball</h3>
+                        <p className='mt-3 text-sm leading-relaxed text-neutral-600'>
+                            Creative writing and analysis on European football and Manchester United, published on X.
+                        </p>
+                        <p className='mt-6 inline-flex items-center gap-1 text-sm font-medium'>
+                            Learn more <ArrowRight className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                        </p>
+                    </div>
+                </Link>
+
                 <p className='mt-8 text-sm text-neutral-500'>
                     Also:{' '}
-                    <Link
-                        href='/projects/project3'
-                        className='font-medium text-neutral-900 underline underline-offset-4'
-                    >
-                        Social media management
-                    </Link>
-                    {' · '}
                     <Link
                         href='/tools'
                         className='font-medium text-neutral-900 underline underline-offset-4'
