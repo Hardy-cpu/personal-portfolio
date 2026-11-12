@@ -9,7 +9,7 @@ import { ARTICLES, COMMUNITY_POSTS, CONTENT_COUNTS, PRODUCT_POSTS, PROOF_POSTS, 
 export const metadata: Metadata = {
     alternates: { canonical: '/projects/project1' },
     title: 'CLEATUS: LinkedIn Growth Case Study',
-    description: 'How I grew CLEATUS on LinkedIn from zero to 3,000+ followers and nearly 120K impressions, creating a reliable customer acquisition channel.',
+    description: 'How I grew CLEATUS on LinkedIn from zero to 3,000+ followers and ~120K LinkedIn impressions, creating a reliable customer acquisition channel.',
 }
 
 const FEATURED_ARTICLES = [
@@ -48,7 +48,7 @@ export default function Project1Page() {
                 ]}
                 stats={[
                     { value: '3,000+', label: 'New LinkedIn followers, from zero' },
-                    { value: '~120K', label: 'Impressions across content' },
+                    { value: '~120K', label: 'LinkedIn impressions across content' },
                     { value: `${CONTENT_COUNTS.articles}`, label: 'Articles written' },
                     { value: `${CONTENT_COUNTS.posts}`, label: 'LinkedIn posts written' },
                 ]}
@@ -221,7 +221,7 @@ export default function Project1Page() {
                         Thousands in <strong className='text-neutral-900'>MRR</strong> driven through LinkedIn engagement.
                     </li>
                     <li>
-                        Nearly <strong className='text-neutral-900'>120,000</strong> impressions across content.
+                        <strong className='text-neutral-900'>~120K</strong> LinkedIn impressions across content.
                     </li>
                     <li>
                         <strong className='text-neutral-900'>{CONTENT_COUNTS.articles + CONTENT_COUNTS.posts} pieces</strong> of content published: {CONTENT_COUNTS.articles} articles and {CONTENT_COUNTS.posts} posts.

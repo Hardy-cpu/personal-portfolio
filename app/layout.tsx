@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         template: '%s | Cole Hardister',
     },
     description:
-        'Digital marketer, SEO specialist, and sports marketer. Grew CLEATUS on LinkedIn from 0 to 3,000+ followers and 120K+ organic impressions. SEO and Content Manager at SearchX.',
+        'Digital marketer, SEO specialist, and sports marketer. Grew CLEATUS on LinkedIn from 0 to 3,000+ followers and ~120K LinkedIn impressions. SEO and Content Manager at SearchX.',
     keywords: [
         'digital marketing',
         'marketing strategy',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         locale: 'en_US',
         title: 'Cole Hardister - Digital Marketing, SEO & Sports Marketing',
         description:
-            'Digital marketer, SEO specialist, and sports marketer. Grew CLEATUS on LinkedIn from 0 to 3,000+ followers and 120K+ organic impressions.',
+            'Digital marketer, SEO specialist, and sports marketer. Grew CLEATUS on LinkedIn from 0 to 3,000+ followers and ~120K LinkedIn impressions.',
         siteName: 'Cole Hardister Portfolio',
         images: [
             {

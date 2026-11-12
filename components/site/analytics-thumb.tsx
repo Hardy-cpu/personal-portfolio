@@ -35,7 +35,7 @@ export function AnalyticsThumb() {
                 ))}
             </div>
             <div>
-                <p className='font-display text-6xl leading-none tracking-tight text-[#0a66c2] origin-left transition-transform duration-500 group-hover:scale-[1.03]'>119,624</p>
+                <p className='font-display text-6xl leading-none tracking-tight text-[#0a66c2] origin-left transition-transform duration-500 group-hover:scale-[1.03]'>~120K</p>
                 <p className='mt-2 text-sm text-neutral-600'>LinkedIn impressions, tracked and reported</p>
             </div>
         </div>

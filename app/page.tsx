@@ -83,8 +83,8 @@ export default function Portfolio() {
                         label='LinkedIn followers at CLEATUS, from zero'
                     />
                     <Stat
-                        value='120K'
-                        label='Organic impressions in under a year'
+                        value='~120K'
+                        label='LinkedIn impressions at CLEATUS'
                     />
                     <Stat
                         value='70'
